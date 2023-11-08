@@ -27,18 +27,51 @@
       }
       @media only screen and (max-width: 600px) {
         .frame {
-            width: 100%;
-            max-height: 50vh;
+          width: 100%;
+          max-height: 50vh;
         }
+      }
+      .btn {
+        padding: 5px 10px;
+        margin: 10px;
+        background: cyan;
+        border: none;
+        outline: none;
+        font-size: large;
+        color: darkblue;
+        border-radius: 16px;
+      }
+      .list {
+        display: none;
       }
     </style>
   </head>
   <body class="body">
-    <h2 style="color: aliceblue;">لآ اِلَهَ اِ لّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ</h2>
+    <h2 style="color: aliceblue">
+      لآ اِلَهَ اِ لّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ
+    </h2>
     <h1 class="heading">Madina Masjid</h1>
-    <iframe
-      class="frame"
-      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVaG81_kYZVuNFjb_nkn_YWaVP8Gj1oyfdg26nUj1QWA5X3l9wvTi7hJg7KFqzXcmlL73h8DdrqY0f/pubhtml?widget=true&amp;headers=false"
-    ></iframe>
+    <button class="btn" onclick="showList()">SHOW LIST</button>
+    <div class="list">
+      <iframe
+        class="frame"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVaG81_kYZVuNFjb_nkn_YWaVP8Gj1oyfdg26nUj1QWA5X3l9wvTi7hJg7KFqzXcmlL73h8DdrqY0f/pubhtml?widget=true&amp;headers=false"
+      ></iframe>
+    </div>
+    <script>
+      let show = false;
+      function showList() {
+        let list = document.getElementsByClassName("list")[0];
+        if (!show) {
+          list.style.display = "block";
+          document.getElementsByClassName("btn")[0].textContent = "HIDE LIST";
+          show = true;
+        } else {
+          list.style.display = "none";
+          document.getElementsByClassName("btn")[0].textContent = "SHOW LIST";
+          show = false;
+        }
+      }
+    </script>
   </body>
 </html>
