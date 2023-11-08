@@ -3,15 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" value="notranslate">
     <title>Madina Masjid</title>
     <style>
       .body {
-        background-image: url("./images/mosque.jpg");
+        /* background-image: url("./images/mosque.jpg"); */
+        padding: 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-size: cover;
+      }
+      .img-div{
+        width: 100%;
+      }
+      .image{
+        width: -webkit-fill-available;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
       }
       .frame {
         width: 50%;
@@ -43,10 +56,22 @@
       }
       .list {
         display: none;
+        width: 100%;
+      }
+      .block{
+        color: yellow;
+        font-size: 20px;
+        font-weight: 600;
+        position: fixed;
+        bottom: 10px;
+        font-family: monospace;
       }
     </style>
   </head>
   <body class="body">
+    <div class="img-div">
+        <img class="image" src="./images/mosque.jpg" alt="mosque" />
+    </div>
     <h2 style="color: aliceblue">
       لآ اِلَهَ اِ لّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ
     </h2>
@@ -58,6 +83,8 @@
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVaG81_kYZVuNFjb_nkn_YWaVP8Gj1oyfdg26nUj1QWA5X3l9wvTi7hJg7KFqzXcmlL73h8DdrqY0f/pubhtml?widget=true&amp;headers=false"
       ></iframe>
     </div>
+    <blockquote class="block">Note: In case of any wrong entry,<a style="color: ivory;" href="https://wa.me/9455751606">click here</a>for whatsapp me.</blockquote>
+    <marquee>Some features coming soon...</marquee>
     <script>
       let show = false;
       function showList() {
