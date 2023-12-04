@@ -77,7 +77,7 @@
       لآ اِلَهَ اِ لّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ
     </h2>
     <h1 class="heading">Madina Masjid</h1>
-    <button class="btn" onclick="showList()">SHOW LIST</button>
+    <button class="btn" onclick="showList()">Click to See List</button>
     <div class="list">
       <iframe
         class="frame"
@@ -92,7 +92,7 @@
         let list = document.getElementsByClassName("list")[0];
         if (!show) {
           list.style.display = "block";
-          document.getElementsByClassName("btn")[0].textContent = "HIDE LIST";
+          document.getElementsByClassName("btn")[0].textContent = "Hide List";
           show = true;
         } else {
           list.style.display = "none";
