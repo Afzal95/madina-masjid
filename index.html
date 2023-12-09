@@ -16,6 +16,7 @@
         justify-content: center;
         align-items: center;
         background-size: cover;
+        background-color: lightseagreen;
       }
       .img-div{
         width: 100%;
@@ -54,6 +55,7 @@
         font-size: large;
         color: darkblue;
         border-radius: 16px;
+        cursor: pointer;
       }
       .list {
         display: none;
@@ -63,29 +65,47 @@
         color: yellow;
         font-size: 1rem;
         font-weight: 600;
-        position: fixed;
-        bottom: 10px;
         font-family: monospace;
       }
     </style>
   </head>
   <body class="body">
     <div class="img-div">
-        <img class="image" src="./images/mosque.jpg" alt="mosque" />
+        <img class="image" src="./images/ten.jpg" alt="mosque" />
     </div>
     <h2 style="color: aliceblue">
       لآ اِلَهَ اِ لّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ
     </h2>
     <h1 class="heading">Madina Masjid</h1>
     <button class="btn" onclick="showList()">Click to See List</button>
+    
     <div class="list">
       <iframe
         class="frame"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVaG81_kYZVuNFjb_nkn_YWaVP8Gj1oyfdg26nUj1QWA5X3l9wvTi7hJg7KFqzXcmlL73h8DdrqY0f/pubhtml?widget=true&amp;headers=false"
       ></iframe>
     </div>
+    <button onclick="showGallery()" class="btn gall" >Open Gallery</button>
+    <section style="display: none;" class="gallery">
+      <div style="margin: 6px; border-radius: 1rem;overflow: auto;white-space: nowrap;">
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/one.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/two.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/three.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/four.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/five.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/six.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/seven.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/eight.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/nine.jpg" alt="image" />
+        <img style="width: 96%; margin: 1px; height: auto;border-radius: 16px;" src="./images/ten.jpg" alt="image" />
+      </div>
+      <div style="display: flex;justify-content: space-between;">
+      <!-- <button onclick="showPrev()">Prev</button>
+      <button onclick="showNext()">Next</button> -->
+      </div>
+    </section>
     <blockquote class="block">Note: In case of any wrong entry/enquiry,<a style="color: aqua;" href="https://wa.me/9455751606">click here</a>for whatsapp.</blockquote>
-    <marquee>Some features will be added soon...</marquee>
+    <!-- <marquee>Some features will be added soon...</marquee> -->
     <script>
       let show = false;
       function showList() {
@@ -100,6 +120,36 @@
           show = false;
         }
       }
+      let showgallery = false;
+
+      function showGallery(){
+        if(showgallery){
+          document.getElementsByClassName('gallery')[0].style.display='none';          
+          document.getElementsByClassName('gall')[0].textContent='Show Photos'          
+          showgallery = false;
+        }else{
+          document.getElementsByClassName('gallery')[0].style.display='block';
+          document.getElementsByClassName('gall')[0].textContent='Hide Photos'
+          showgallery = true;
+        }
+      }
+
+      // let image = document.getElementById('img');
+      // let images = ['one','two','three','four','five','six','seven','eight','nine','ten'];
+      // let no =0;
+      // function showNext(){
+      //   no = no%images.length;
+      //   image.src = `./images/${images[no]}.jpg`;
+      //   no++;
+      // }
+      // function showPrev(){
+      //   no = no%images.length;
+      //   image.src = `./images/${images[no]}.jpg`;
+      //   no--;
+      //   if(no<=0){
+      //     no=images.length-1
+      //   }
+      // }
     </script>
   </body>
 </html>
